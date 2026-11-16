@@ -11,6 +11,18 @@
     对应证书：证书名称（级别）
 <!-- course:end -->
 
+<!-- showcase:start -->
+## 先玩一玩
+
+<p class="sc-tagline">一句话说清这门课让读者动手做什么</p>
+
+<div class="showcase" aria-label="精选交互动画">
+<ol class="sc-list">
+<li data-sim="sims/example-counter/main.html" data-video="assets/showcase/example-counter" data-title="示例动画：点击计数器" data-play="连点几下“加一”，再点“清零”。"><img src="assets/showcase/example-counter.jpg" alt="示例动画：点击计数器截图" loading="lazy"><p class="sc-hook">点一下按钮，数字就加一：交互动画就是这样一步步做出来的</p><p><b>示例动画：点击计数器</b>　连点几下“加一”，再点“清零”。</p><p><a href="sims/example-counter/main.html">打开动画</a>　<a class="sc-chap" href="chapters/01-sample/" title="第 1 章 示例章">去读第1章 →</a></p></li>
+</ol>
+</div>
+<!-- showcase:end -->
+
 ## 这本书讲什么
 
 两三段话：这门课研究什么、学生身边哪里用得到、全书从哪里讲到哪里。

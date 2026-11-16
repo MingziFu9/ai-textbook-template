@@ -2,7 +2,7 @@
 # 课程配置：全书唯一需要手改的配置文件
 # 改完后运行  python tools/course.py sync  ，会自动更新：
 #   mkdocs.yml 的站点名和导航、首页课程信息与目录、缺少的章节骨架、
-#   实验目录、术语表的章节小节、学习图谱的章节列表、附录编号
+#   实验目录、术语表的章节小节、学习图谱的章节列表、附录编号、首页轮播
 # 课件（tools/make_slides.py）、教案（tools/make_lesson_plan.py）、Word/PDF 版（tools/export_docx.py）
 # 也从这里读取课程名、学时等信息
 # ============================================================
@@ -45,3 +45,17 @@ lesson_plan:
   online_ratio: 0.5                   # 线上学时占比（开放大学以线上为主，按实际改）
   teacher: ""                         # 授课教师，留空则教案上留出填写位置
   school: ""                          # 学校名称，留空则不显示
+
+# 首页“先玩一玩”轮播：挑本课最有代表性、画面最震撼的 5 个交互动画，按轮播顺序写（第 1 个放最抓人的）。
+# sim 是 docs/sims/ 下的目录名，hook 是一句问句或悬念，play 是一句玩法；
+# steps 是录短视频时自动做的操作（写法见 编写规范.md 第十二节）。改完运行 python tools/showcase.py record 录视频。
+# 不需要轮播时写成 showcase: []
+showcase_tagline: "一句话说清这门课让读者动手做什么"
+showcase:
+  - sim: example-counter
+    hook: "点一下按钮，数字就加一：交互动画就是这样一步步做出来的"
+    play: "连点几下“加一”，再点“清零”。"
+    steps:
+      - ["click", "加一", {"n": 5, "gap": 0.35, "hold": 1}]
+      - ["poster"]
+      - ["click", "清零", {"hold": 0.8}]

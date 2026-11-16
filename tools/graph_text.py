@@ -70,7 +70,12 @@ def main():
     link = lambda n: f"[{n['id']}](../appendix/glossary.md#{n['a']})"
     by_id = {n["id"]: n for n in v["NODES"]}
     cats = "、".join(v["CATS"])
-    lines = [START, "", f"图谱共有 **{len(v['NODES'])} 个概念、{len(v['EDGES'])} 条先修关系**，概念按章排列，颜色表示 {len(v['CATS'])} 个类别（{cats}）。概念的定义都来自[附录 D 术语表](../appendix/glossary.md)，先修关系由编者根据各章内容整理。", "", "## 文字版", "", "下面按章列出每个概念的直接先修概念，便于打印或用读屏软件阅读。", ""]
+    try:   # 术语表在附录里的编号（导论、NLP 等附录数量不同）
+        from common import course
+        letter = next(ap["letter"] for ap in course().get("appendices", []) if ap["file"] == "glossary.md")
+    except Exception:
+        letter = "D"
+    lines = [START, "", f"图谱共有 **{len(v['NODES'])} 个概念、{len(v['EDGES'])} 条先修关系**，概念按章排列，颜色表示 {len(v['CATS'])} 个类别（{cats}）。概念的定义都来自[附录 {letter} 术语表](../appendix/glossary.md)，先修关系由编者根据各章内容整理。", "", "## 文字版", "", "下面按章列出每个概念的直接先修概念，便于打印或用读屏软件阅读。", ""]
     for ch in range(1, len(v["CHAPTERS"])):
         nodes = [n for n in v["NODES"] if n["ch"] == ch]
         if not nodes:

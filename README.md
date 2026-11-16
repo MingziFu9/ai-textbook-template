@@ -11,6 +11,7 @@
 | `系列公共术语表.md` | 七门课共用的 91 个术语，统一译名和定义 |
 | `docs/chapters/01-sample/` | 示例章，演示每一种元素的写法；写第一章时整章替换 |
 | `docs/sims/` | 交互动画，`common/` 是公共样式和脚本，`example-counter/` 是示例 |
+| `docs/assets/showcase/` | 首页“先玩一玩”轮播的短视频和封面图，按 `course.yml` 的 `showcase` 段用 `python tools/showcase.py record` 录制 |
 | `docs/learning-graph/` | 学习图谱（概念和先修关系写在 `data.js`） |
 | `docs/certificate.md` | 证书考点对照页，没有对应证书的课程从 nav 里删掉 |
 | `docs/appendix/` | 附录 A Python 速查、B 工具库速查、C 实验环境与数据说明、D 术语表 |
@@ -39,9 +40,10 @@ python tools/glossary_links.py link 03     # 第 3 章正文中的术语改成�
 python tools/glossary_links.py concepts 03 # 生成第 3 章的“本章概念清单”
 python tools/graph_text.py                 # 检查学习图谱并生成文字版
 python tools/book_stats.py                 # 更新首页“全书概览”统计表
-python tools/course.py sync                # 按 course.yml 更新导航、首页、章节骨架等
+python tools/course.py sync                # 按 course.yml 更新导航、首页、章节骨架、首页轮播等
 python tools/course.py new-sim 名称 3 "标题" # 新建第 3 章的交互动画骨架
 python tools/export_docx.py --pdf          # 导出 Word 版和 PDF 版到 build/（需要 pandoc 和 LibreOffice）
+python tools/showcase.py record            # 录首页轮播的短视频（需要 npm install、ffmpeg）
 ```
 
 ## 课件、教案和 Word/PDF 版
